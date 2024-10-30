@@ -1,0 +1,39 @@
+<div class="main-container">
+  <header class="logo">
+      <img src="https://img.icons8.com/ios-filled/100/ffffff/user.png" alt="User Profile Icon" class="img-logo" id="img-logo-user" />
+  </header>
+
+  <main class="main-component">
+      <form action="/login" method="POST" class="form-component" aria-label="User Login Form">
+        <div class="input-component">
+          <label for="text" class="logo-button">
+              <img src="https://img.icons8.com/ios-filled/100/ffffff/user.png" alt="User Icon" class="img-logo" />
+          </label>
+          <input type="text" id="text" name="text" class="button" placeholder="Name" required aria-required="true" aria-label="Name">
+      </div>
+          <div class="input-component">
+              <label for="email" class="logo-button">
+                  <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="User Icon" class="img-logo" />
+              </label>
+              <input type="email" id="email" name="email" class="button" placeholder="Email" required aria-required="true" aria-label="Email">
+          </div>
+
+          <div class="input-component">
+              <label for="password" class="logo-button">
+                  <img src="https://img.icons8.com/ios-filled/100/ffffff/lock-2.png" alt="Password Icon" class="img-logo" />
+              </label>
+              <input type="password" id="password" name="password" class="button" placeholder="Password" required aria-required="true" aria-label="Password">
+          </div>
+          <div class="input-component">
+            <label for="password" class="logo-button">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/key.png" alt="Password Icon" class="img-logo"/>
+            </label>
+            <input type="password" id="password" name="password" class="button" placeholder="Confirm Password" required aria-required="true" aria-label="Password">
+        </div>
+        <button type="submit" class="button-submit" aria-label="Submit Login Form">Signup</button>
+        <div>
+            <p>Already have an account?<a href="/user/auth/login">Login</a></p>
+        </div>            
+      </form>
+  </main>
+</div>

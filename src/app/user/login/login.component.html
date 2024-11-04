@@ -1,0 +1,34 @@
+<div class="main-container">
+    <header class="logo">
+        <img src="https://img.icons8.com/ios-filled/100/ffffff/user.png" alt="User Profile Icon" class="img-logo" id="img-logo-user" />
+    </header>
+
+    <main class="main-component">
+        <form class="form-component" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+            <div class="input-component">
+                <label for="email" class="logo-button">
+                    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="User Icon" class="img-logo" />
+                </label>
+                <input type="email" id="email" name="email" class="button" placeholder="Email" required [(ngModel)]="model.email" name="email" #emailInput="ngModel">
+            </div>
+            <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="error">
+                Email é obrigatório.
+              </div>
+
+            <div class="input-component">
+                <label for="password" class="logo-button">
+                    <img src="https://img.icons8.com/ios-filled/100/ffffff/lock-2.png" alt="Password Icon" class="img-logo" />
+                </label>
+                <input type="password" id="password" name="password" class="button" placeholder="Password" required [(ngModel)]="model.password" name="password" #passwordInput="ngModel">
+            </div>
+            <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="error">
+                Senha é obrigatória.
+              </div>
+
+            <button type="submit" class="button-submit" [disabled]="loginForm.invalid">Login</button>            
+            <div>
+                <p>Don't have an account?<a href="/user/auth/signup">Signup</a></p>
+            </div>
+        </form>
+    </main>
+</div>

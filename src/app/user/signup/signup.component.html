@@ -1,0 +1,62 @@
+<div class="main-container">
+  <header class="logo">
+      <img src="https://img.icons8.com/ios-filled/100/ffffff/user.png" alt="User Profile Icon" class="img-logo" id="img-logo-user" />
+  </header>
+
+  <main class="main-component">
+      <form (ngSubmit)="onSubmit()" #signupForm="ngForm" class="form-component">
+        <div>
+            <div class="input-component">
+                <label for="text" class="logo-button">
+                    <img src="https://img.icons8.com/ios-filled/100/ffffff/user.png" alt="User Icon" class="img-logo" />
+                </label>
+                <input type="text" id="text" name="text" class="button" placeholder="Name" required [(ngModel)]="model.name" name="name" #nameInput="ngModel">
+            </div>
+          <div *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)" class="error">
+            Nome é obrigatório.
+          </div>
+        </div>
+          <div>
+            <div class="input-component">
+                <label for="email" class="logo-button">
+                    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="User Icon" class="img-logo" />
+                </label>
+                <input type="email" id="email" name="email" class="button" placeholder="Email" required [(ngModel)]="model.email" name="email" #emailInput="ngModel">
+            </div>
+              <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="error">
+                Email é obrigatório.
+              </div>
+            </div>
+
+          <div>
+            <div class="input-component">
+                <label for="password" class="logo-button">
+                    <img src="https://img.icons8.com/ios-filled/100/ffffff/lock-2.png" alt="Password Icon" class="img-logo" />
+                </label>
+                <input type="password" id="password" name="password" class="button" placeholder="Password" required [(ngModel)]="model.password" name="password" #passwordInput="ngModel">
+            </div>
+              <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="error">
+                Senha é obrigatória.
+              </div>
+            </div>
+          <div>
+            <div class="input-component">
+                <label for="confirmPassword" class="logo-button">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/key.png" alt="Password Icon" class="img-logo"/>
+                </label>
+                <input type="password" id="confirmPassword" name="confirmPassword" class="button" placeholder="Confirm Password" required [(ngModel)]="model.password" name="confirmPassword" #confirmPasswordInput="ngModel">
+            </div>
+            <div *ngIf="confirmPasswordInput.invalid && (confirmPasswordInput.dirty || confirmPasswordInput.touched)" class="error">
+                Confirmação de senha é obrigatória.
+            </div>
+            <div *ngIf="passwordInput.value !== confirmPasswordInput.value && confirmPasswordInput.dirty" class="error">
+                As senhas não coincidem.
+            </div>
+        </div>
+        <button type="submit" class="button-submit" [disabled]="signupForm.invalid">Signup</button>
+        <div>
+            <p>Already have an account?<a href="/user/auth/login">Login</a></p>
+        </div>            
+      </form>
+  </main>
+</div>
